@@ -1,0 +1,25 @@
+<style>
+	.bubble {
+		width: 100%;
+		background-color: var(--bui-widget-color);
+		background-image:
+			radial-gradient(closest-side, transparent 20%, var(--bui-widget-background-color) 50%),
+			radial-gradient(closest-side, transparent 30%, hsl(0deg 0% 0%) 70%);
+		background-size: 8px 8px;
+		background-position: 2px 2px, 0px 0px;
+		height: 100%;
+	}
+	.bubble:active {
+		background-position: 2px 1px, 0px 0px;
+	}
+</style>
+<div class="bubble"></div>
+
+width
+Ширина
+height
+Высота
+left
+Позиция по X
+top
+Позиция по Y

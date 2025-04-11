@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="ru">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="./icons/bui.ico">
+	<link rel="manifest" href="manifest.json">
+
+    <title>Барабашка</title>
+    <meta name="description" content="Панель управления для Node-RED">
+
+    <!-- CSS -->
+    <link type="text/css" rel="stylesheet" href="./index.css" media="all">
+	<link type="text/css" rel="stylesheet" href="./css/dark.css" media="all">
+	<link type="text/css" rel="stylesheet" href="./css/sunset.css" media="all">
+
+    <!-- NOTE this MUST be loaded as a MODULE. Also, uib client loaded in index not here -->
+    <script type="module" async src="./index.js">/* Your custom code + Imports uibuilder */</script>
+
+	<!-- https://docs.fontawesome.com/web/setup/get-started -->
+	<!-- https://fontawesome.com/v6/search?o=r&m=free -->
+	<script defer src="./fontawesome/js/solid.js"></script>
+	<script defer src="./fontawesome/js/regular.min.js"></script>
+	<script defer src="./fontawesome/js/fontawesome.min.js"></script>
+
+	<!-- https://shoelace.style/getting-started/installation-->
+
+	<!-- Виджеты BUI -->
+	<script type="module" src="./widgets/all.js"></script>
+
+</head>
+<body>
+	<bui-book id="book">
+		<bui-tab slot="nav" role="tab" page="page0"><span class="fa-regular fa-lightbulb"></span></bui-tab>
+		<bui-tab slot="nav" role="tab" page="page3"><bui-string>msg</bui-string></bui-tab>
+		
+		<bui-page-grid slot="pages" id="page0" role="page" label="bui-basic" class="panel-background-cell">
+			<bui-basic label="Гостинная" id="test_7" style="--top: 1; --left:1; --width: 4;--height: 6;">
+				<bui-string size="1.5" color="var(--sl-color-cyan-500)">Температура</bui-string>
+				<bui-number fixed="1" units="°C" topic="zigbee2mqtt/sensor_voc_living/temperature"></bui-number>
+				<bui-string size="1.5" color="var(--sl-color-cyan-500)">Влажность</bui-string>
+				<bui-number fixed="1" units="%" topic="zigbee2mqtt/sensor_voc_living/humidity"></bui-number>
+			</bui-basic>
+			<bui-basic label="Гостинная" id="test_1" style="--width: 3; --height: 3;">
+				<bui-led value="on"></bui-led>
+			</bui-basic>
+			<bui-basic label="#2" units="мкг/м³" id="test_2"  style="--width: 5; --height: 5;">
+				<bui-string>2999001234567890</bui-string>
+			</bui-basic>
+			<bui-basic style="--width: 1; --height: 1;">
+			</bui-basic>
+			<bui-basic label="#1">
+				<span class="fa fa-camera-retro fa-2x"></span>
+			</bui-basic>
+		</bui-page-grid>
+		<bui-page-grid slot="pages" id="page3" role="page"></bui-page-grid>
+	</bui-book>
+</body>
+</html>

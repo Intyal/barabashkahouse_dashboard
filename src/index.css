@@ -1,0 +1,38 @@
+/* https://fonts.google.com/?preview.text=1234%20метров&preview.size=53&lang=ru_Cyrl */
+@font-face {
+	font-family: SofiaSansCondensed;
+	src: url('fonts/SofiaSansCondensed-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: Oswald;
+	src: url('fonts/Oswald-VariableFont_wght.ttf') format('truetype');
+}
+
+/* Кастомные свойства*/
+/* https://doka.guide/css/custom-properties/ */
+
+:root {
+
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	/* 10px */
+	font-size: 62.5%;
+}
+
+body {
+	background: var(--bui-background-color);
+	margin: 0px;
+}
+
+#uib_last_msg {
+	background-color: #2A9D8F;
+}
+

@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ru">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="./icons/bui.ico">
+	<!-- https://pwa-workshop.js.org/1-manifest/#manifest-fields -->
+	<link rel="manifest" href="manifest.json">
+
+    <title>Барабашка</title>
+    <meta name="description" content="Панель управления для Node-RED">
+
+    <!-- CSS -->
+    <link type="text/css" rel="stylesheet" href="./index.css" media="all">
+	<link type="text/css" rel="stylesheet" href="./css/dark.css" media="all">
+	<link type="text/css" rel="stylesheet" href="./css/sunset.css" media="all">
+
+    <!-- NOTE this MUST be loaded as a MODULE. Also, uib client loaded in index not here -->
+    <script type="module" async src="./index.js">/* Your custom code + Imports uibuilder */</script>
+
+	<!-- https://www.jsdelivr.com/package/npm/js-indexedb -->
+	<script type="module" src="./js-IndexedDB.js"></script>
+
+	<!-- https://docs.fontawesome.com/web/setup/get-started -->
+	<!-- https://fontawesome.com/v6/search?o=r&m=free -->
+	<!-- <script defer src="./fontawesome/js/solid.js"></script> -->
+	<!-- <script defer src="./fontawesome/js/regular.min.js"></script> -->
+	<!-- <script defer src="./fontawesome/js/fontawesome.min.js"></script> -->
+
+	<!-- https://shoelace.style/getting-started/installation-->
+
+	<!-- Виджеты BUI -->
+	<script type="module" src="./widgets/all.js"></script>
+</head>
+<body>
+	<div id="test"></div>
+	<bui-book id="bui_book" tab-style="bottom">
+		<bui-tab slot="nav" role="tab" id="page0_tab" page="page0">test</bui-tab>
+		<bui-tab slot="nav" role="tab" id="page3_tab" page="page3"><bui-string>msg</bui-string></bui-tab>
+		
+		<bui-page slot="pages" id="page0" role="page" class="panel-background-cell" style="--count-cell-width: 20;">
+			<bui-sticker style="--width: 20;--height: 2;background-color: #3dc76b;" id="">
+				<bui-string style="--width: 20;--height: 2;--color: black;--font-size: 4em;--justify-content: center" id="string1">Свет в квартире</bui-string>
+			</bui-sticker>
+			<bui-sticker label="Стикер" style="--width: 20;--height: 1">
+				<bui-string style="--font-size: 1em;">1</bui-string>
+				<bui-string style="--font-size: 2em;">2</bui-string>
+				<bui-string style="--font-size: 3em;">3</bui-string>
+				<bui-string style="--font-size: 4em;">4</bui-string>
+				<bui-string style="--font-size: 5em;">5</bui-string>
+				<bui-string>6</bui-string><bui-string>7</bui-string><bui-string>8</bui-string><bui-string>9</bui-string><bui-string>10</bui-string>
+				<bui-string>11</bui-string><bui-string>12</bui-string><bui-string>13</bui-string><bui-string>14</bui-string><bui-string>15</bui-string>
+				<bui-string>16</bui-string><bui-string>17</bui-string><bui-string>18</bui-string><bui-string>19</bui-string><bui-string>20</bui-string>
+			</bui-sticker>
+			<bui-sticker style="--width: 20;--height: 1;background-color: 3dc76b;" id="">
+				<bui-string style="--width: 20;--height: 1;--color: black;--font-size: 3em;--justify-content: center" id="">Свет в квартире</bui-string>
+			</bui-sticker>
+			<bui-sticker label="Стикер" style="--width: 20;--height: 3">
+				<bui-string style="--width: 20;--font-size: 3em;">Слайдер</bui-string>
+				<bui-slider style="--width: 18; --height: 1;"></bui-slider>
+				<bui-string style="--width: 1; --height: 1;--font-size: 6em;">22</bui-string>
+			</bui-sticker>
+			<bui-sticker label="Стикер" style="--width: 6;--height: 8">
+				<bui-string style="--width: 4; --height: 1; --font-size: 5em;">Стикер</bui-string>
+				<bui-number fixed="1" units="%" topic="random/random1" style="--width: 3; --height: 1; --font-size: 5em;"></bui-number>
+				<bui-led style="--width: 2; --height: 1; --size: 100%; --color: var(--color-amber-300);"></bui-led>
+				<bui-led style="--width: 2; --height: 1; --size: 80%; --color: var(--color-amber-600);"></bui-led>
+				<bui-led style="--width: 2; --height: 1; --size: 60%; --color: var(--color-amber-900);"></bui-led>
+				<bui-html style="--width: 3; --height: 2; --size: 90%; --color: lime;" id="bui_1fb330db360d45b2" click>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"></path></svg>
+				</bui-html>
+				<bui-html style="--width: 2; --height: 2; --size: 90%;" id="bui_1fb330db360d45b3" click>
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path fill="currentColor" d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"></path></svg>
+				</bui-html>
+				<bui-click button-id="bui_1fb330db360d45b2" topic="random/random1" value-set="16"></bui-click>
+				<bui-click button-id="bui_1fb330db360d45b3" topic="random/random1" value-set="50"></bui-click>
+				<bui-gauge-circle-2 id="gauge0" gauge-style="full" max-value="100" units="ppb" fixed="0" topic="random/random1"></bui-gauge-circle-2>
+				<bui-gauge-circle-1 gauge-style="12" max-value="100" units="ppb" fixed="0" sector-width="8" topic="random/random1" color="hsl(82.8 81.5% 52.6%);" color-gradient="hsl(17.1 83.5% 42.7%)" value="89.7" style="--value-font-size: 40px;"></bui-gauge-circle-1>
+				<bui-progress-bar style="--width: 6; --height: 1; --color: lime;" topic="random/random1" value="50"></bui-progress-bar>
+			</bui-sticker>
+
+			<bui-sticker label="Led" id="test_1" style="--width: 6; --height: 3;">
+				<bui-led color="red"></bui-led>
+				<bui-led color="lime"></bui-led>
+				<bui-led></bui-led>
+				<bui-led color="lime"></bui-led>
+				<bui-led size="4" color="red"></bui-led>
+				<bui-led size="4" color="lime"></bui-led>
+				<bui-led color="lime"></bui-led>
+			</bui-sticker>
+			<bui-sticker id="test_2" style="--width: 2; --height: 2;">
+				<bui-led size="5"></bui-led>
+			</bui-sticker>
+
+			<bui-sticker label="Монометр 1" id="gauge_1" style="--width: 9; --height: 3;">
+				<bui-gauge-circle-2 style="--width: 3;--height: 3" id="gauge" gauge-style="full" max-value="100" units="ppb" fixed="0" topic="random/random1"></bui-gauge-circle-2>
+				<bui-gauge-circle-2 style="--width: 3;--height: 3" gauge-style="34" max-value="100" units="ppb" fixed="0" topic="random/random1"></bui-gauge-circle-2>
+				<bui-gauge-circle-2 style="--width: 3;--height: 3" gauge-style="12" min-value="0" max-value="100" value="0" units="ppb" fixed="0" topic="random/random1"></bui-gauge-circle-2>
+			</bui-sticker>
+			<bui-sticker label="Монометр 4" id="gauge_2" style="--width: 9; --height: 3;">
+				<bui-gauge-circle-1 style="--width: 3;--height: 3" gauge-style="34" min-value="20" max-value="80" topic="random/random1" fixed="2" color="hsl(17.1 83.5% 42.7%)" style="--value-font-size: 26px;"></bui-gauge-circle-1>
+				<bui-gauge-circle-1 style="--width: 3;--height: 3" gauge-style="12" max-value="100" units="ppb" fixed="0" sector-width="8" topic="random/random1" color="hsl(82.8 81.5% 52.6%)" color-gradient="hsl(17.1 83.5% 42.7%)" value="89.7" style="--value-font-size: 40px;"></bui-gauge-circle-1>
+				<bui-gauge-circle-1 style="--width: 3;--height: 3" gauge-style="full" max-value="100" units="ppb" fixed="0" topic="random/random1" color="hsl(82.8 81.5% 52.6%)" color-gradient="hsl(17.1 83.5% 42.7%)" value="89.7" style="--value-font-size: 40px;"></bui-gauge-circle-1>
+			</bui-sticker>
+			<bui-sticker label="Монометр 7" id="gauge_4" style="--width: 5; --height: 6;">
+				<bui-gauge-circle-1 style="--width: 5;--height: 6" gauge-style="full" max-value="100000" value="68062" units="ppb" fixed="0" sector-width="8" color="hsl(82.8 81.5% 52.6%)" color-gradient="hsl(17.1 83.5% 42.7%)" style="--value-font-size: 26px;"></bui-gauge-circle-1>
+			</bui-sticker>
+
+		</bui-page>
+		<bui-page slot="pages" id="page3" role="page"></bui-page>
+		<!-- Установка приложения -->
+		<bui-tab slot="nav" role="install_button" id="install_button" style="order: 100; color: gray;" hidden>
+			<bui-html class="bui-custom" style="--size: 1em;--justify-content: center">
+				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+					stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+					<path d="M4 4m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+					<path d="M4 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+					<path d="M14 14m0 1a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v4a1 1 0 0 1 -1 1h-4a1 1 0 0 1 -1 -1z" />
+					<path d="M14 7l6 0" />
+					<path d="M17 4l0 6" />
+				</svg>
+			</bui-html>
+		</bui-tab>
+	</bui-book>
+</body>
+</html>
